@@ -64,7 +64,5 @@ runcmd:
   - 'echo "Starting kubeadm"'
   - 'kubeadm config images pull'
   - 'kubeadm init --pod-network-cidr=10.244.0.0/16 --token=123456.1234567890abcdef -- apiserver-advertise-address=192.168.10.20'
-  - 'echo "Installing Flannel"'
-  - 'curl -sSL https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml| sed "s/amd64/arm/g" | kubectl create -f -'
 
   

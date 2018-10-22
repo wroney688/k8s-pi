@@ -2,9 +2,11 @@
 
 echo -e "\033[1;35m---------------------Setting up K8S Demo------------------------------\033[0m"
 kubectl version
+echo -e "\033[1;34mInstalling Flannel CNI\033[0m"
+curl -sSL https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml| sed "s/amd64/arm/g" | kubectl create -f -
 
 echo -e "\033[1;34mInstalling K8S Dashboard\033[0m"
-kubectl  apply -f https://raw.githubusercontent.com/kubernetes/dashboard/master/src/deploy/recommended/kubernetes-dashboard.yaml
+curl -s https://raw.githubusercontent.com/kubernetes/dashboard/master/src/deploy/recommended/kubernetes-dashboard.yaml | sed "s/amd64/arm64/g" | kubectl apply -f -
 kubectl create clusterrolebinding kubernetes-dashboard --clusterrole=cluster-admin --serviceaccount=kube-system:kubernetes-dashboard
 
 echo -e "\033[1;34mInstalling Metric Server\033[0m"
