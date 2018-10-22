@@ -78,3 +78,9 @@ Setting up a 64 bit follows this recipe:
 
 # Clean Alpine 64 setup
 - This is TBD.  A clean Alpine based setup is another viable option.  This would reduce the footprint on the Pi nodes to the bare minimum and also provide an opportunity to rebuild the K8s components with GoLang >= v1.11 to fix the big number/math problem faced in Etcd as well.
+
+# Quicklinks
+[Assumes you have run kubectl proxy]
+Package | Login Info | Full URL
+K8s Dashboard | n/a | http://localhost:8001/api/v1/namespaces/monitoring/services/grafana:/proxy/
+Grafana | admin/admin | http://localhost:8001/api/v1/namespaces/monitoring/services/grafana:/proxy/
