@@ -37,6 +37,7 @@ package_reboot_if_required: true
 # # Install any additional apt packages you need here
 packages:
  - ntp
+ - nfs-common
 
   
 write_files:
