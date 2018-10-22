@@ -77,4 +77,18 @@ echo -e "\033[1;34mDeploying Prometheus Operator.\033[0m"
 git clone https://github.com/carlosedp/prometheus-operator-ARM
 cd prometheus-operator-ARM
 ./deploy
+echo "
+apiVersion: v1
+kind: Service
+metadata:
+  name: grafana-ext
+spec:
+  type: NodePort
+  ports:
+    - port: 3000
+      targetPort: 3000
+      nodePort: 31000
+  selector:
+    app: grafana
+" | kubectl create -n monitoring -f -
 echo -e "\033[1;35m---------------------K8S Demo Setup Complete------------------------------\033[0m"
