@@ -9,7 +9,7 @@ kubectl create clusterrolebinding kubernetes-dashboard --clusterrole=cluster-adm
 
 echo -e "\033[1;34mInstalling Metric Server\033[0m"
 curl -s https://raw.githubusercontent.com/kubernetes-incubator/metrics-server/master/deploy/1.8%2B/aggregated-metrics-reader.yaml | sed "s/amd64/arm/g" | kubectl apply -f -
-curl -s https://raw.githubusercontent.com/kubernetes-incubator/metrics-server/master/deploy/1.8%2B/auth-delegator.yaml | sed "s/amd64/arm/g/g" | kubectl apply -f -
+curl -s https://raw.githubusercontent.com/kubernetes-incubator/metrics-server/master/deploy/1.8%2B/auth-delegator.yaml | sed "s/amd64/arm/g" | kubectl apply -f -
 curl -s https://raw.githubusercontent.com/kubernetes-incubator/metrics-server/master/deploy/1.8%2B/auth-reader.yaml | sed "s/amd64/arm/g" | kubectl apply -f -
 curl -s https://raw.githubusercontent.com/kubernetes-incubator/metrics-server/master/deploy/1.8%2B/metrics-apiservice.yaml | sed "s/amd64/arm/g" | kubectl apply -f -
 curl -s https://raw.githubusercontent.com/kubernetes-incubator/metrics-server/master/deploy/1.8%2B/metrics-server-deployment.yaml | sed "s/amd64/arm/g" | kubectl apply -f -
@@ -72,7 +72,7 @@ spec:
 ---
 " | kubectl create -f -
 echo -e "\033[1;34mDeploying Prometheus Operator.\033[0m"
-git clone https://github/carlosedp/prometheus-operator-ARM
+git clone https://github.com/carlosedp/prometheus-operator-ARM
 cd prometheus-operator-ARM
 ./deploy
 echo -e "\033[1;35m---------------------K8S Demo Setup Complete------------------------------\033[0m"
