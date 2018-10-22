@@ -81,6 +81,8 @@ Setting up a 64 bit follows this recipe:
 
 # Quicklinks
 [Assumes you have run kubectl proxy]
+
 Package | Login Info | Full URL
-K8s Dashboard | n/a | http://localhost:8001/api/v1/namespaces/monitoring/services/grafana:/proxy/
-Grafana | admin/admin | http://localhost:8001/api/v1/namespaces/monitoring/services/grafana:/proxy/
+------- | ---------- | -----------------------------------
+K8s Dashboard | n/a | http://localhost:8001/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/
+Grafana | admin/admin | http:// << your master IP>> :31000
