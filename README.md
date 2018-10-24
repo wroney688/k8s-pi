@@ -73,3 +73,4 @@ Package | Login Info | Full URL
 ------- | ---------- | -----------------------------------
 K8s Dashboard | n/a | http://localhost:8001/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/
 Grafana | admin/admin | [http:// << your master IP>> :31000](http://192.168.10.20:31000)
+Jenkins | admin/admin |  [http:// << your master IP>> :30003](http://192.168.10.20:30003)
