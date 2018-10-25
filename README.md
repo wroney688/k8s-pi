@@ -39,7 +39,7 @@ expose the cluster to the outside world and use the wired network for all intra-
 
 # Installation
 
-For  Pi versions prior to v3 which has the A53 CPU, you need to install using armhf/32bit.  That is [documented here.](32bit.MD)
+For  Pi versions prior to v3 which has the A53 CPU, you need to install using armhf/32bit.  That is [documented here.](32bit.md)
 
 
 Hypriot suggests using their flash tool to burn the SD image.  While other IMG burning tools are available,
