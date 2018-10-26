@@ -39,7 +39,7 @@ expose the cluster to the outside world and use the wired network for all intra-
 
 # Installation
 
-For  Pi versions prior to v3 which has the A53 CPU, you need to install using armhf/32bit.  That is [documented here.](32bit.MD)
+For  Pi versions prior to v3 which has the A53 CPU, you need to install using armhf/32bit.  That is [documented here.](32bit.md)
 
 
 Hypriot suggests using their flash tool to burn the SD image.  While other IMG burning tools are available,
@@ -76,3 +76,4 @@ Package | Login Info | Full URL
 ------- | ---------- | -----------------------------------
 K8s Dashboard | n/a | http://localhost:8001/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/
 Grafana | admin/admin | [http:// << your master IP>> :31000](http://192.168.10.20:31000)
+Jenkins | admin/admin |  [http:// << your master IP>> :30003](http://192.168.10.20:30003)

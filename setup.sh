@@ -17,6 +17,21 @@ curl -s https://raw.githubusercontent.com/kubernetes-incubator/metrics-server/ma
 curl -s https://raw.githubusercontent.com/kubernetes-incubator/metrics-server/master/deploy/1.8%2B/metrics-server-deployment.yaml | sed "s/amd64/arm/g" | kubectl apply -f -
 curl -s https://raw.githubusercontent.com/kubernetes-incubator/metrics-server/master/deploy/1.8%2B/metrics-server-service.yaml | sed "s/amd64/arm/g" | kubectl apply -f -
 curl -s https://raw.githubusercontent.com/kubernetes-incubator/metrics-server/master/deploy/1.8%2B/resource-reader.yaml | sed "s/amd64/arm/g" | kubectl apply -f -
+echo -e "\033[1;34mExposing Grafana using nodeport 31000.\033[0m"
+echo "
+apiVersion: v1
+kind: Service
+metadata:
+  name: grafana-ext
+spec:
+  type: NodePort
+  ports:
+    - port: 3000
+      targetPort: 3000
+      nodePort: 31000
+  selector:
+    app: grafana
+" | kubectl create -n monitoring -f -
 
 echo -e "\033[1;34mCreating NFS PVs from 192.168.10.8 for future use.\033[0m"
 echo "
