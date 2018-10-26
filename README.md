@@ -66,6 +66,9 @@ Setting up a 64 bit follows this recipe:
 # Clean Alpine 64 setup
 - This is TBD.  A clean Alpine based setup is another viable option.  This would reduce the footprint on the Pi nodes to the bare minimum and also provide an opportunity to rebuild the K8s components with GoLang >= v1.11 to fix the big number/math problem faced in Etcd as well.
 
+# Multi-arch Docker build
+- This is TBD as a result of this testbed becoming a hybrid of armv7 and armv8 (32/64 bit).  The idea is to use this in combination with the wroney/rpi-blueocean project to build arm and arm64 images and push them to docker hub.  This will allow a true arm64 build of Jenkins instead of running the armv7 version (since it's just a Java app) on the armv8 nodes.
+
 # Quicklinks
 [Assumes you have run kubectl proxy]
 
