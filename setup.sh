@@ -109,6 +109,7 @@ spec:
 
 
 echo -e "\033[1;34mInstalling Jenkins.\033[0m"
+USE_JAVA_OPTS="-Djenkins.install.runSetupWizard=false"
 echo "
 ---
 apiVersion: v1
