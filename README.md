@@ -69,6 +69,9 @@ Setting up a 64 bit follows this recipe:
 # Multi-arch Docker build
 - This is TBD as a result of this testbed becoming a hybrid of armv7 and armv8 (32/64 bit).  The idea is to use this in combination with the wroney/rpi-blueocean project to build arm and arm64 images and push them to docker hub.  This will allow a true arm64 build of Jenkins instead of running the armv7 version (since it's just a Java app) on the armv8 nodes.
 
+# Setup of CGroups and Fix for Prometheus
+- This is TBD.  Prometheus will crash a node over time due to unbounded memory consumption.  The correction is to adjust cgroup usage so that evictions occur sooner.  The eviction "should" reset the memory consumption.  Another option is to adjust Prometheus metric collection; however, this involves digging into the missing/incorrect/gappy open-source documentation to figure out how to limit appropriately for a microcloud.
+
 # Quicklinks
 [Assumes you have run kubectl proxy]
 
