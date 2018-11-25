@@ -39,7 +39,7 @@ packages:
  - ntp
  - nfs-common
 
-  
+
 write_files:
   - path: "/etc/docker/daemon.json"
     owner: "root:root"
@@ -47,6 +47,7 @@ write_files:
       {
         "labels": [ "os=linux", "arch=arm64" ],
         "experimental": true,
+        "max-concurrent-uploads": 1,
         "debug": true
       }
   - content: |
@@ -56,7 +57,7 @@ write_files:
       192.168.10.21  pi-node01
       192.168.10.22  pi-node02
       192.168.10.23  pi-node03
-    path: /etc/hosts  
+    path: /etc/hosts
 
 # These commands will be ran once on first boot only
 runcmd:
@@ -75,6 +76,3 @@ runcmd:
   - 'apt-get install -y kubeadm'
   - 'echo "Joining cluster" '
   - 'kubeadm join --token 123456.1234567890abcdef pi-master:6443 --discovery-token-unsafe-skip-ca-verification'
-
-
-
