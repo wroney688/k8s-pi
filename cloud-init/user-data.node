@@ -76,3 +76,5 @@ runcmd:
   - 'apt-get install -y kubeadm'
   - 'echo "Joining cluster" '
   - 'kubeadm join --token 123456.1234567890abcdef pi-master:6443 --discovery-token-unsafe-skip-ca-verification'
+  - 'kubectl label nodes `hostname` cputype=pi'
+  - 'kubectl label nodes `hostname` app=mpich'
