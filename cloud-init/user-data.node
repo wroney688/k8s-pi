@@ -70,7 +70,7 @@ runcmd:
   - 'echo "deb [arch=arm64] http://apt.kubernetes.io/ kubernetes-xenial main" > /etc/apt/sources.list.d/kubernetes.list'
   - 'apt-get update'
   - 'echo "Updating Docker-ce" '
-  - 'apt-get remove -y docker-ce && apt-get install -y docker-ce'
+  - 'apt-get remove -y docker-ce && apt-get install -y docker-ce ntfs-3g'
   - 'systemctl restart docker'
   - 'echo "Installing Kubeadm" '
   - 'apt-get install -y kubeadm'

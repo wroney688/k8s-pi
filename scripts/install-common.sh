@@ -11,7 +11,7 @@ echo "Updating Image"
 yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
 yum -y update
 echo "Installing Docker, Net-tools, Git, CEPH and Kubernetes"
-yum -y install docker-ce net-tools git maven ceph-common kubeadm kubectl kubelet jq
+yum -y install docker-ce net-tools git maven ceph-common kubeadm kubectl kubelet jq ntfs-3g
 
 echo "Correcting cgroup to match and setting hostname"
 sed -i 's/cgroup-driver=systemd/cgroup-driver=cgroupfs/g' /etc/systemd/system/kubelet.service.d/10-kubeadm.conf
