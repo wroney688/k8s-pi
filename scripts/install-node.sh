@@ -21,8 +21,8 @@ modprobe ip_vs_sh
 modprobe ip_vs_wrr
 modprobe ip_vs_rr
 modprobe ip_vs
-kubeadm join --token 123456.1234567890abcdef $clusternet:6443 --discovery-token-unsafe-skip-ca-verification --ignore-preflight-errors=SystemVerification
-kubectl label nodes `hostname` cputype=x86
+kubeadm join --token 2xf6lt.s0m238v78tdcg1qh $clusternet:6443 --discovery-token-unsafe-skip-ca-verification --ignore-preflight-errors=SystemVerification
+kubectl --kubeconfig=/vagrant/kubeconfig.yaml label nodes `hostname` cputype=x86
 mkdir /home/vagrant/.kube
 cp -i /vagrant/kubeconfig.yaml /home/vagrant/.kube/config
 chown -R vagrant /home/vagrant/.kube/config

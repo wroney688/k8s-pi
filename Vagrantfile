@@ -20,7 +20,7 @@ required_plugins.each do |plugin|
   exec "vagrant #{ARGV.join(' ')}" if need_restart
 end
 
-node_cnt = 1
+node_cnt = 2
 node_cpu = 4
 node_mem = 4
 puts "Node Count = #{node_cnt}"
