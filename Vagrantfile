@@ -20,13 +20,16 @@ required_plugins.each do |plugin|
   exec "vagrant #{ARGV.join(' ')}" if need_restart
 end
 
-
+node_cnt = 1
+node_cpu = 4
+node_mem = 4
 puts "Node Count = #{node_cnt}"
 puts "Node CPU cores = #{node_cpu}"
 puts "Node Memory = #{node_mem} GB"
-puts "Node Storage = #{node_sdb} GB"
-#using TEST-NET from RFC3330
+
+#using TEST-NET from RFC3330 for NFS
 base_ip = "192.0.2"
+
 master_ip = "192.168.10.20"
 
 
