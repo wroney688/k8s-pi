@@ -63,6 +63,12 @@ Setting up a 64 bit follows this recipe:
 - Software Installation
   1.  Grab this repo and run setup.sh to begin installing all of the k8s packages.  The easiest is to do this from the pi-master node.  This setup script does a lot of sed commands to get rid of the hard-coded amd64 specs on images embedded in the various yaml files.
 
+# Blended K8s
+If you are going to add amd64 nodes, then you may want to use the wroney/metrics-server:v0.3.1 image instead of the k8s.gcr.io one.  This is just a manifest built with the command below so you don't have to constantly edit the yaml based upon which node takes the pod.
+
+>./manifest-tool push from-spec manifest-metrics-server.yaml
+
+
 # Clean Alpine 64 setup
 - This is TBD.  A clean Alpine based setup is another viable option.  This would reduce the footprint on the Pi nodes to the bare minimum and also provide an opportunity to rebuild the K8s components with GoLang >= v1.11 to fix the big number/math problem faced in Etcd as well.
 
