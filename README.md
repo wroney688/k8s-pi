@@ -63,7 +63,7 @@ Setting up a 64 bit follows this recipe:
 - Software Installation
   1.  Grab this repo and run setup.sh to begin installing all of the k8s packages.  The easiest is to do this from the pi-master node.  This setup script does a lot of sed commands to get rid of the hard-coded amd64 specs on images embedded in the various yaml files.
 
-# Blended K8s
+# Metric-Server
 If you are going to add amd64 nodes, then you may want to use the wroney/metrics-server:v0.3.1 image instead of the k8s.gcr.io one.  This is just a manifest built with the command below so you don't have to constantly edit the yaml based upon which node takes the pod.
 
 >docker pull k8s.gcr.io/metrics-server-amd64:v0.3.1
@@ -76,6 +76,8 @@ If you are going to add amd64 nodes, then you may want to use the wroney/metrics
 >docker push wroney/metrics-server-arm64:v0.3.1
 >docker push wroney/metrics-server-arm:v0.3.1
 >./manifest-tool push from-spec manifest-metrics-server.yaml
+
+In addition, you'll need to [modify the deployment of metric server](https://stackoverflow.com/questions/53392609/unable-to-fully-collect-metrics-when-installing-metric-server) due to a certificate error in the kubeadm deployment.  
 
 
 # Clean Alpine 64 setup
