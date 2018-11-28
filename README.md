@@ -77,7 +77,11 @@ If you are going to add amd64 nodes, then you may want to use the wroney/metrics
 >docker push wroney/metrics-server-arm:v0.3.1
 >./manifest-tool push from-spec manifest-metrics-server.yaml
 
-In addition, you'll need to [modify the deployment of metric server](https://stackoverflow.com/questions/53392609/unable-to-fully-collect-metrics-when-installing-metric-server) due to a certificate error in the kubeadm deployment.  
+In addition, you'll need to [modify the deployment of metric server](https://stackoverflow.com/questions/53392609/unable-to-fully-collect-metrics-when-installing-metric-server) due to a certificate error in the kubeadm deployment.  Just in case that link dies:
+
+>command:
+>  - /metrics-server
+>  - --kubelet-insecure-tls
 
 
 # Clean Alpine 64 setup
