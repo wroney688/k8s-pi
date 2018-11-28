@@ -66,6 +66,15 @@ Setting up a 64 bit follows this recipe:
 # Blended K8s
 If you are going to add amd64 nodes, then you may want to use the wroney/metrics-server:v0.3.1 image instead of the k8s.gcr.io one.  This is just a manifest built with the command below so you don't have to constantly edit the yaml based upon which node takes the pod.
 
+>docker pull k8s.gcr.io/metrics-server-amd64:v0.3.1
+>docker tag k8s.gcr.io/metrics-server-amd64:v0.3.1 wroney/metrics-server-amd64:v0.3.1
+>docker pull k8s.gcr.io/metrics-server-arm64:v0.3.1
+>docker tag k8s.gcr.io/metrics-server-arm64:v0.3.1 wroney/metrics-server-arm64:v0.3.1
+>docker pull k8s.gcr.io/metrics-server-arm:v0.3.1
+>docker tag k8s.gcr.io/metrics-server-arm:v0.3.1 wroney/metrics-server-arm:v0.3.1
+>docker push wroney/metrics-server-amd64:v0.3.1
+>docker push wroney/metrics-server-arm64:v0.3.1
+>docker push wroney/metrics-server-arm:v0.3.1
 >./manifest-tool push from-spec manifest-metrics-server.yaml
 
 

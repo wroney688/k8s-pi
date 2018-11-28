@@ -1,17 +1,17 @@
 image: wroney/metrics-server:v0.3.1
 manifests:
   -
-    image: k8s.gcr.io/metrics-server-arm:v0.3.1
+    image: wroney/metrics-server-arm:v0.3.1
     platform:
       architecture: arm
       os: linux
   -
-    image: k8s.gcr.io/metrics-server-arm64:v0.3.1
+    image: wroney/metrics-server-arm64:v0.3.1
     platform:
       architecture: arm64
       os: linux
   -
-    image: k8s.gcr.io/metrics-server-amd64:v0.3.1
+    image: wroney/metrics-server-amd64:v0.3.1
     platform:
       architecture: amd64
       os: linux
