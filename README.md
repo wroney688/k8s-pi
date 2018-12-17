@@ -82,6 +82,8 @@ In addition, you'll need to [modify the deployment of metric server](https://sta
 >command:
 >  - /metrics-server
 >  - --kubelet-insecure-tls
+>#Note..the metric-resolution switch you see in the docs/code doesn't appear to actually do anything!
+>  - --metric-resolution=5s
 
 
 # Clean Alpine 64 setup
@@ -101,4 +103,4 @@ Package | Login Info | Full URL
 K8s Dashboard | n/a | http://localhost:8001/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/
 Grafana | admin/admin | [http:// << your master IP>> :31000](http://192.168.10.20:31000)
 Jenkins | admin/admin | [http:// << your master IP>> :30003](http://192.168.10.20:30003)
-Prometheus | n/a | [http:// << your master IP>> :30900](http://192.168.10.20:30900)
+Prometheus | n/a | http://localhost:8001/api/v1/namespaces/monitoring/services/prometheus-k8s:web/proxy
